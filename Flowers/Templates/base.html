@@ -1,0 +1,53 @@
+{% load static %} <!-- Static tagini yuklash -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Website{% endblock %}</title>
+
+    <!-- CSS faylini qo'shish -->
+    <link rel="stylesheet" href="{% static 'css/type.css' %}">
+    <link rel="stylesheet" href="{% static 'css/by_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/by_turlar.css' %}">
+    <script src="{% static 'js/type.js' %}" defer></script>
+    <script src="{% static 'js/type.js' %}" defer></script>
+</head>
+<body>
+    
+    <style>
+        ul.gul-list .gul-item {
+        width: calc(33.33% - 20px);
+        background: #f1f1f1;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    ul.gul-list .gul-item:hover {
+        background: #e7e7e7;
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+    }
+
+    </style>
+
+
+    
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="/">Asosiy sahifa</a></li>
+        </ul>
+    </nav>
+
+    <!-- Asosiy kontent joyi -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+
+</body>
+</html>

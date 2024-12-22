@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Barcha Gullar{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">        
+        <h1>Turlar</h1>
+        <ul class="gul-list">
+            {% for gul in gullar %}
+                <li class="gul-item">
+                    <a href="{% url 'gullar' gul.id %}" class="gul-link">
+                        <div class="gul-info">
+                            <h2>{{ gul.name }}</h2>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    ul.gul-list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0;
+    }
+
+    ul.gul-list .gul-item {
+        width: calc(33.33% - 20px);
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    ul.gul-list .gul-link {
+        text-decoration: none;
+        color: #333;
+    }
+
+    ul.gul-list .gul-img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    ul.gul-list .gul-info {
+        margin-top: 10px;
+    }
+
+    ul.gul-list .gul-info h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    ul.gul-list .gul-info p {
+        font-size: 16px;
+        color: #777;
+    }
+</style>
+{% endblock %}

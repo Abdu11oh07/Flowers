@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ type }} Gullar{% endblock %}
+
+{% block content %}
+<section>
+    <div class="container">
+        <h1>{{ type }} Gullar</h1>
+        <ul class="gul-list">
+            {% for gul in gullar %}
+                <li class="gul-item">
+                    <a href="{% url 'gullar' gul.id %}" class="gul-link">
+                        <div class="gul-info">
+                            <h2>{{ gul.name }}</h2>
+                            <p>{{ gul.price }} so'm</p>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>
+
+
+
+{% endblock %}
